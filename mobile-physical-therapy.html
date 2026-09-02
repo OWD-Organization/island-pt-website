@@ -427,10 +427,13 @@
     .nav .nav-cta { display: none; }
     .nav .nav-call { display: none; }
     .nav-actions { display: none; }
-    .nav-toggle { display: inline-flex; }
+    .nav-toggle {
+      display: inline-flex;
+      position: absolute; right: 28px; top: 50%; transform: translateY(-50%);
+    }
     .nav-mobile-icons { display: inline-flex; }
     .nav-inner { position: relative; justify-content: center; }
-    .nav .brand { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
+    .nav .brand { position: absolute; left: 28px; top: 50%; transform: translateY(-50%); }
     body[data-drawer="open"] { overflow: hidden; }
     .call-bar { display: block; }
     main, footer { padding-bottom: 96px; }
