@@ -182,6 +182,9 @@
     transition: border-color var(--dur-fast) var(--ease-out-q);
   }
   .nav ul a:hover, .nav ul a[aria-current="page"] { border-bottom-color: var(--ocean-70); }
+  .nav-actions {
+    display: inline-flex; align-items: center; gap: 10px;
+  }
   .nav-call {
     display: inline-flex; align-items: center; gap: 7px;
     background: transparent; color: var(--ink-95);
@@ -783,8 +786,10 @@
       <li><a href="why-cash-pay.html">Why Cash-Pay</a></li>
       <li><a href="contact.html" aria-current="page">Contact</a></li>
     </ul>
-    <a class="nav-call" href="tel:8082016922">📞 Call</a>
-    <a class="nav-cta" href="schedule.html">🗓️ Schedule</a>
+    <div class="nav-actions">
+  <a class="nav-call" href="tel:8082016922">📞 Call</a>
+  <a class="nav-cta" href="schedule.html">🗓️ Schedule</a>
+    </div>
     <div class="nav-mobile-icons">
       <a href="tel:8082016922" aria-label="Call Island PT"><span class="icon" aria-hidden="true">📞</span>Call</a>
       <a href="schedule.html" aria-label="Schedule an appointment"><span class="icon" aria-hidden="true">🗓️</span>Schedule</a>
