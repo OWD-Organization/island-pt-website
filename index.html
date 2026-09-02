@@ -449,11 +449,16 @@
       position: absolute; right: 28px; top: 50%; transform: translateY(-50%);
     }
     .nav-mobile-icons { display: inline-flex; }
-    .nav-inner { position: relative; justify-content: center; }
-    .nav .brand { position: absolute; left: 28px; top: 50%; transform: translateY(-50%); }
+    .nav-inner { position: relative; justify-content: flex-start; }
+    .nav .brand { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
     body[data-drawer="open"] { overflow: hidden; }
     .call-bar { display: block; }
     main, footer { padding-bottom: 96px; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-mobile-icons a { width: 40px; padding: 0; justify-content: center; }
+    .nav-mobile-icons a .label { display: none; }
   }
 
   /* =================================================================
@@ -1278,8 +1283,8 @@
   <a class="nav-cta" href="schedule.html">🗓️ Schedule</a>
     </div>
     <div class="nav-mobile-icons">
-      <a href="tel:8082016922" aria-label="Call Island PT"><span class="icon" aria-hidden="true">📞</span>Call</a>
-      <a href="schedule.html" aria-label="Schedule an appointment"><span class="icon" aria-hidden="true">🗓️</span>Schedule</a>
+      <a href="tel:8082016922" aria-label="Call Island PT"><span class="icon" aria-hidden="true">📞</span><span class="label">Call</span></a>
+      <a href="schedule.html" aria-label="Schedule an appointment"><span class="icon" aria-hidden="true">🗓️</span><span class="label">Schedule</span></a>
     </div>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-drawer" aria-expanded="false">
       <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>

@@ -113,7 +113,7 @@
   .call-bar a { display: flex; align-items: center; justify-content: center; gap: 12px; font-family: var(--sans); font-weight: 600; font-size: 16px; text-decoration: none; padding: 12px 18px; border-radius: var(--r-soft); background: var(--bone); color: var(--ocean-90); }
   .call-bar a .icon { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1; }
   .call-bar .sub { text-align: center; display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: oklch(94% 0.008 82 / 0.75); margin-top: 8px; }
-  @media (max-width: 1150px) { .nav ul { display: none; } .nav .nav-cta { display: none; } .nav .nav-call { display: none; } .nav-actions { display: none; } .nav-toggle { display: inline-flex; position: absolute; right: 28px; top: 50%; transform: translateY(-50%); } .nav-mobile-icons { display: inline-flex; } .nav-inner { position: relative; justify-content: center; } .nav .brand { position: absolute; left: 28px; top: 50%; transform: translateY(-50%); } body[data-drawer="open"] { overflow: hidden; } .call-bar { display: block; } main, footer { padding-bottom: 96px; } }
+  @media (max-width: 1150px) { .nav ul { display: none; } .nav .nav-cta { display: none; } .nav .nav-call { display: none; } .nav-actions { display: none; } .nav-toggle { display: inline-flex; position: absolute; right: 28px; top: 50%; transform: translateY(-50%); } .nav-mobile-icons { display: inline-flex; } .nav-inner { position: relative; justify-content: flex-start; } .nav .brand { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); } body[data-drawer="open"] { overflow: hidden; } .call-bar { display: block; } main, footer { padding-bottom: 96px; } } @media (max-width: 480px) { .nav-mobile-icons a { width: 40px; padding: 0; justify-content: center; } .nav-mobile-icons a .label { display: none; } }
 
   /* EYEBROWS */
   .eyebrow { display: inline-flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-95); font-weight: 600; }
@@ -291,8 +291,8 @@
   <a class="nav-cta" href="schedule.html">🗓️ Schedule</a>
     </div>
     <div class="nav-mobile-icons">
-      <a href="tel:8082016922" aria-label="Call Island PT"><span class="icon" aria-hidden="true">📞</span>Call</a>
-      <a href="schedule.html" aria-label="Schedule an appointment"><span class="icon" aria-hidden="true">🗓️</span>Schedule</a>
+      <a href="tel:8082016922" aria-label="Call Island PT"><span class="icon" aria-hidden="true">📞</span><span class="label">Call</span></a>
+      <a href="schedule.html" aria-label="Schedule an appointment"><span class="icon" aria-hidden="true">🗓️</span><span class="label">Schedule</span></a>
     </div>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-drawer" aria-expanded="false">
       <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
