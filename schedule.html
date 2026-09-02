@@ -256,17 +256,20 @@
 
   .nav-mobile-icons {
     display: none;
-    align-items: center; gap: 10px;
+    align-items: center; gap: 8px;
   }
   .nav-mobile-icons a {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px;
+    display: inline-flex; align-items: center; gap: 5px;
+    height: 40px; padding: 0 10px;
     border: 1.5px solid var(--ink-95);
     border-radius: var(--r-flat);
     text-decoration: none;
-    font-size: 17px;
+    color: var(--ink-95);
+    font-family: var(--sans); font-size: 12px; font-weight: 600;
     line-height: 1;
+    white-space: nowrap;
   }
+  .nav-mobile-icons a .icon { font-size: 15px; line-height: 1; }
   .nav-toggle {
     display: none;
     appearance: none; background: transparent; border: 1.5px solid var(--ink-95);
@@ -957,8 +960,8 @@
     </ul>
     <a class="nav-cta" href="schedule.html" aria-current="page">Schedule</a>
     <div class="nav-mobile-icons">
-      <a href="tel:8082016922" aria-label="Call Island PT">📞</a>
-      <a href="schedule.html" aria-label="Schedule an appointment">🗓️</a>
+      <a href="tel:8082016922" aria-label="Call Island PT"><span class="icon" aria-hidden="true">📞</span>Call</a>
+      <a href="schedule.html" aria-label="Schedule an appointment"><span class="icon" aria-hidden="true">🗓️</span>Schedule</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-drawer" aria-expanded="false">
       <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
