@@ -182,7 +182,18 @@
     transition: border-color var(--dur-fast) var(--ease-out-q);
   }
   .nav ul a:hover, .nav ul a[aria-current="page"] { border-bottom-color: var(--ocean-70); }
+  .nav-call {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: transparent; color: var(--ink-95);
+    padding: 12px 18px;
+    text-decoration: none; font-size: 14px; font-weight: 600;
+    border: 1.5px solid var(--ink-95);
+    border-radius: var(--r-flat);
+    transition: background var(--dur-fast) var(--ease-out-q), color var(--dur-fast) var(--ease-out-q);
+  }
+  .nav-call:hover { background: var(--ink-95); color: var(--paper-00); }
   .nav-cta {
+    display: inline-flex; align-items: center; gap: 7px;
     background: var(--ocean-70); color: var(--bone);
     padding: 12px 18px;
     text-decoration: none; font-size: 14px; font-weight: 600;
@@ -351,6 +362,7 @@
   @media (max-width: 860px) {
     .nav ul { display: none; }
     .nav .nav-cta { display: none; }
+    .nav .nav-call { display: none; }
     .nav-toggle { display: inline-flex; }
     .nav-mobile-icons { display: inline-flex; }
     body[data-drawer="open"] { overflow: hidden; }
@@ -958,7 +970,8 @@
       <li><a href="why-cash-pay.html">Why Cash-Pay</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a class="nav-cta" href="schedule.html" aria-current="page">Schedule</a>
+    <a class="nav-call" href="tel:8082016922">📞 Call</a>
+    <a class="nav-cta" href="schedule.html" aria-current="page">🗓️ Schedule</a>
     <div class="nav-mobile-icons">
       <a href="tel:8082016922" aria-label="Call Island PT"><span class="icon" aria-hidden="true">📞</span>Call</a>
       <a href="schedule.html" aria-label="Schedule an appointment"><span class="icon" aria-hidden="true">🗓️</span>Schedule</a>
