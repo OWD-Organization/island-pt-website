@@ -101,7 +101,7 @@
   .drawer-group .drawer-sub { border-top: 0; padding: 0 0 14px 16px; margin: 0; border-left: 1.5px solid var(--ocean-70); margin-left: 4px; }
   .drawer-group .drawer-sub li { border-bottom: 0; }
   .drawer-group .drawer-sub a { padding: 12px 0; font-size: 18px; font-family: var(--serif); letter-spacing: -0.01em; }
-  .nav-toggle { display: none; appearance: none; background: transparent; border: 1.5px solid var(--ink-95); border-radius: var(--r-flat); width: 44px; height: 44px; align-items: center; justify-content: center; padding: 0; cursor: pointer; }
+  .nav-mobile-icons { display: none; align-items: center; gap: 10px; } .nav-mobile-icons a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1.5px solid var(--ink-95); border-radius: var(--r-flat); text-decoration: none; font-size: 17px; line-height: 1; } .nav-toggle { display: none; appearance: none; background: transparent; border: 1.5px solid var(--ink-95); border-radius: var(--r-flat); width: 44px; height: 44px; align-items: center; justify-content: center; padding: 0; cursor: pointer; }
   .nav-toggle:focus-visible { outline: 2px solid var(--coral-55); outline-offset: 3px; }
   .nav-toggle .bars { display: flex; flex-direction: column; gap: 4px; align-items: center; }
   .nav-toggle .bars span { display: block; width: 18px; height: 1.5px; background: var(--ink-95); transition: transform var(--dur-fast) var(--ease-out-q), opacity var(--dur-fast) var(--ease-out-q); }
@@ -121,7 +121,7 @@
   .call-bar a { display: flex; align-items: center; justify-content: center; gap: 12px; font-family: var(--sans); font-weight: 600; font-size: 16px; text-decoration: none; padding: 12px 18px; border-radius: var(--r-soft); background: var(--bone); color: var(--ocean-90); }
   .call-bar a .icon { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1; }
   .call-bar .sub { text-align: center; display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: oklch(94% 0.008 82 / 0.75); margin-top: 8px; }
-  @media (max-width: 860px) { .nav ul { display: none; } .nav .nav-cta { display: none; } .nav-toggle { display: inline-flex; } body[data-drawer="open"] { overflow: hidden; } .call-bar { display: block; } main, footer { padding-bottom: 96px; } }
+  @media (max-width: 860px) { .nav ul { display: none; } .nav .nav-cta { display: none; } .nav-toggle { display: inline-flex; } .nav-mobile-icons { display: inline-flex; } body[data-drawer="open"] { overflow: hidden; } .call-bar { display: block; } main, footer { padding-bottom: 96px; } }
 
   /* EYEBROWS */
   .eyebrow { display: inline-flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-95); font-weight: 600; }
@@ -325,6 +325,10 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <a class="nav-cta" href="schedule.html">Schedule</a>
+    <div class="nav-mobile-icons">
+      <a href="tel:8082016922" aria-label="Call Island PT">📞</a>
+      <a href="schedule.html" aria-label="Schedule an appointment">🗓️</a>
+    </div>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-drawer" aria-expanded="false">
       <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
     </button>

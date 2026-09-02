@@ -310,6 +310,19 @@
   }
 
   /* Hamburger button */
+  .nav-mobile-icons {
+    display: none;
+    align-items: center; gap: 10px;
+  }
+  .nav-mobile-icons a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px;
+    border: 1.5px solid var(--ink-95);
+    border-radius: var(--r-flat);
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 1;
+  }
   .nav-toggle {
     display: none;
     appearance: none; background: transparent; border: 1.5px solid var(--ink-95);
@@ -396,6 +409,7 @@
     .nav ul { display: none; }
     .nav .nav-cta { display: none; }
     .nav-toggle { display: inline-flex; }
+    .nav-mobile-icons { display: inline-flex; }
     body[data-drawer="open"] { overflow: hidden; }
     .call-bar { display: block; }
     main, footer { padding-bottom: 96px; }
@@ -1058,6 +1072,10 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <a class="nav-cta" href="schedule.html">Schedule</a>
+    <div class="nav-mobile-icons">
+      <a href="tel:8082016922" aria-label="Call Island PT">📞</a>
+      <a href="schedule.html" aria-label="Schedule an appointment">🗓️</a>
+    </div>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-drawer" aria-expanded="false">
       <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
     </button>
