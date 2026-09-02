@@ -343,7 +343,7 @@
   /* Hamburger button — mobile only */
   .nav-toggle {
     display: none;
-    appearance: none; background: transparent; border: 1.5px solid var(--ink-95);
+    appearance: none; background: var(--ocean-90); border: 1.5px solid var(--ocean-90);
     border-radius: var(--r-flat);
     width: 44px; height: 44px;
     align-items: center; justify-content: center;
@@ -354,7 +354,7 @@
     display: flex; flex-direction: column; gap: 4px; align-items: center;
   }
   .nav-toggle .bars span {
-    display: block; width: 18px; height: 1.5px; background: var(--ink-95);
+    display: block; width: 18px; height: 1.5px; background: var(--bone);
     transition: transform var(--dur-fast) var(--ease-out-q), opacity var(--dur-fast) var(--ease-out-q);
   }
   .nav-toggle[aria-expanded="true"] .bars span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
