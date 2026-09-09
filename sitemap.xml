@@ -56,6 +56,32 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Per-city service area pages (children of service-area.html) -->
+  <url>
+    <loc>https://islandptmaui.com/physical-therapy-kihei.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://islandptmaui.com/physical-therapy-wailea.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://islandptmaui.com/physical-therapy-kula.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://islandptmaui.com/physical-therapy-makawao.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <!-- ============= BLOG ============= -->
   <!-- Blog hub, category archives (/blog/category/{slug}), and posts
        (/blog/{slug}) will be added here once the blog is built. -->
