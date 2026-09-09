@@ -28,9 +28,12 @@
   </url>
 
   <!-- ============= SERVICES ============= -->
-  <!-- Individual service pages (spine-back-care, mobility-balance,
-       strength-based-therapy, running-gait-assessment) will be added here
-       as their own <url> entries once they exist as standalone pages. -->
+  <!-- Follows the same flat-file, hub-and-spoke pattern as the per-city
+       pages below: services.html is the hub, each specialty gets its own
+       root-level page (e.g. spine-back-care.html, mobility-balance.html,
+       strength-based-therapy.html, running-gait-assessment.html), linked
+       from a "Services" nav dropdown. Add each as its own <url> entry here
+       once it exists. -->
   <url>
     <loc>https://islandptmaui.com/services.html</loc>
     <lastmod>2026-09-09</lastmod>
@@ -56,7 +59,12 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Per-city service area pages (children of service-area.html) -->
+  <!-- Per-city service area pages (children of service-area.html),
+       naming convention: physical-therapy-{city}.html.
+       Built: Kīhei, Wailea, Kula, Makawao.
+       areaServed schema also names South/Central/West/Upcountry/North Shore
+       Maui — Central Maui, West Maui, and North Shore Maui pages are the
+       likely next ones to add in this same pattern. -->
   <url>
     <loc>https://islandptmaui.com/physical-therapy-kihei.html</loc>
     <lastmod>2026-09-09</lastmod>
@@ -83,8 +91,12 @@
   </url>
 
   <!-- ============= BLOG ============= -->
-  <!-- Blog hub, category archives (/blog/category/{slug}), and posts
-       (/blog/{slug}) will be added here once the blog is built. -->
+  <!-- Same flat-file pattern: blog.html as the hub, each post its own
+       root-level page (e.g. blog-{slug}.html), each assigned to a category
+       (back-pain, mobility-balance, strength-wellness, running-sports,
+       clinic-news). If category archive pages are built too, they'd follow
+       the same convention, e.g. blog-category-{slug}.html. Add each post
+       and category page as its own <url> entry here once it exists. -->
 
   <!-- ============= LEGAL ============= -->
   <url>
