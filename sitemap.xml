@@ -1,51 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ============= CORE PAGES ============= -->
   <url>
     <loc>https://islandptmaui.com/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://islandptmaui.com/schedule.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://islandptmaui.com/about.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://islandptmaui.com/contact.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ============= SERVICES ============= -->
+  <!-- Individual service pages (spine-back-care, mobility-balance,
+       strength-based-therapy, running-gait-assessment) will be added here
+       as their own <url> entries once they exist as standalone pages. -->
+  <url>
     <loc>https://islandptmaui.com/services.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://islandptmaui.com/mobile-physical-therapy.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://islandptmaui.com/service-area.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://islandptmaui.com/why-cash-pay.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ============= BLOG ============= -->
+  <!-- Blog hub, category archives (/blog/category/{slug}), and posts
+       (/blog/{slug}) will be added here once the blog is built. -->
+
+  <!-- ============= LEGAL ============= -->
   <url>
-    <loc>https://islandptmaui.com/about.html</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://islandptmaui.com/privacy-policy.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://islandptmaui.com/schedule.html</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://islandptmaui.com/terms.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
-  <url>
-    <loc>https://islandptmaui.com/contact.html</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+
+  <!-- Excluded on purpose (noindex): thank-you.html, design-system.html -->
+
 </urlset>
