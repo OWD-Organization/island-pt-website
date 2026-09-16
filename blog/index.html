@@ -547,9 +547,11 @@
     background: var(--paper-15);
   }
   .post-feature .shot img {
-    width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+    width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
     transition: transform var(--dur-mid) var(--ease-out-q);
   }
+  /* Panoramic art keeps more of its width */
+  .post-feature .shot[data-fit="wide"] img { aspect-ratio: 16 / 9; }
   .post-feature .shot:hover img { transform: scale(1.02); }
   .post-feature h3 {
     font-family: var(--serif); font-weight: 400;
@@ -648,7 +650,7 @@
     margin: var(--gap-l) 0 0;
     border-radius: var(--r-arc); overflow: hidden; position: relative;
   }
-  .article-shot img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+  .article-shot img { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; }
   .article-shot figcaption {
     position: absolute; left: 20px; bottom: 18px;
     background: oklch(20% 0.038 145 / 0.82); color: var(--bone);
@@ -987,8 +989,8 @@
       </div>
 
       <article class="post-feature">
-        <a class="shot" href="/blog/low-back-pain" aria-label="Read: Taking Control of Low Back Pain">
-          <img src="/img/coastal-trail-walking-maui.jpg" alt="Quadruped core stability exercise performed on a mat during rehabilitation" loading="lazy">
+        <a class="shot" data-fit="wide" href="/blog/low-back-pain" aria-label="Read: Taking Control of Low Back Pain">
+          <img src="/img/haleakala-crater-overlook.webp" alt="A hiker carrying a small child on their shoulders looking out over the Haleakalā crater on Maui" width="1800" height="837" loading="lazy">
         </a>
         <div class="copy">
           <p class="post-meta">
