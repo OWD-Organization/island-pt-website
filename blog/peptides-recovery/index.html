@@ -650,6 +650,9 @@
     text-transform: uppercase;
   }
   @media (max-width: 720px) { .article-shot img { aspect-ratio: 3 / 2; } }
+  /* Art whose own framing must not be cropped (e.g. captioned images) */
+  .article-shot[data-fit="full"] { max-width: 840px; margin-left: auto; margin-right: auto; }
+  .article-shot[data-fit="full"] img { aspect-ratio: 3 / 2; height: auto; object-fit: contain; }
 
   /* BLOG — prose */
   .prose {
@@ -980,9 +983,8 @@
         </span>
       </div>
 
-      <figure class="article-shot">
-        <img src="/img/runner-mid-stride-road.jpg" alt="Runner mid-stride on an open road while returning to training after injury">
-        <figcaption>Loading tissue on purpose</figcaption>
+      <figure class="article-shot" data-fit="full">
+        <img src="/img/peptide-meme.webp" alt="Meme captioned &ldquo;Peptides!?!? We talkin&rsquo; &rsquo;bout peptides?!?!&rdquo;" width="1239" height="832">
       </figure>
     </header>
   </div>
@@ -991,8 +993,6 @@
   <section class="block tight">
     <div class="wrap">
       <div class="prose">
-        <p class="kicker">&ldquo;Peptides?!? We talkin&rsquo; &rsquo;bout peptides?!?&rdquo;</p>
-
         <p>Heck yeah we are.</p>
 
         <p>If you have spent any time in the health, fitness, or longevity world recently, you have probably heard someone talking about peptides. Depending on who you ask, peptides can supposedly:</p>

@@ -650,6 +650,9 @@
     text-transform: uppercase;
   }
   @media (max-width: 720px) { .article-shot img { aspect-ratio: 3 / 2; } }
+  /* Art whose own framing must not be cropped (e.g. captioned images) */
+  .article-shot[data-fit="full"] { max-width: 840px; margin-left: auto; margin-right: auto; }
+  .article-shot[data-fit="full"] img { aspect-ratio: 3 / 2; height: auto; object-fit: contain; }
 
   /* BLOG — prose */
   .prose {

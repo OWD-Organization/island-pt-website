@@ -657,6 +657,9 @@
     text-transform: uppercase;
   }
   @media (max-width: 720px) { .article-shot img { aspect-ratio: 3 / 2; } }
+  /* Art whose own framing must not be cropped (e.g. captioned images) */
+  .article-shot[data-fit="full"] { max-width: 840px; margin-left: auto; margin-right: auto; }
+  .article-shot[data-fit="full"] img { aspect-ratio: 3 / 2; height: auto; object-fit: contain; }
 
   /* BLOG — prose */
   .prose {
@@ -1003,7 +1006,7 @@
 
       <article class="post-row">
         <a class="shot" data-fit="full" href="/blog/peptides-recovery" aria-label="Read: Peptides — miracle recovery tool or just another health trend?">
-          <img src="/img/peptide-meme.webp" alt="Meme captioned &ldquo;Peptides!?!? We talkin&rsquo; &rsquo;bout peptides?!?!&rdquo;" width="760" height="510" loading="lazy">
+          <img src="/img/peptide-meme.webp" alt="Meme captioned &ldquo;Peptides!?!? We talkin&rsquo; &rsquo;bout peptides?!?!&rdquo;" width="1239" height="832" loading="lazy">
         </a>
         <div class="copy">
           <p class="post-meta">
