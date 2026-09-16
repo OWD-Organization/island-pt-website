@@ -633,9 +633,9 @@
   }
   .hero-photo .bg {
     position: absolute; inset: 0;
-    background-image: url("img/runeasi-assessment-review.jpg");
+    background-image: url("img/outrigger-canoe-race-maui.webp");
     background-size: cover;
-    background-position: center 30%;
+    background-position: center 42%;
     z-index: -2;
   }
   .hero-photo .scrim {
@@ -643,9 +643,10 @@
     background:
       linear-gradient(
         180deg,
-        oklch(20% 0.038 145 / 0.50) 0%,
-        oklch(20% 0.038 145 / 0.30) 38%,
-        oklch(16% 0.040 145 / 0.88) 100%
+        oklch(20% 0.038 145 / 0.52) 0%,
+        oklch(20% 0.038 145 / 0.42) 30%,
+        oklch(16% 0.040 145 / 0.72) 62%,
+        oklch(16% 0.040 145 / 0.92) 100%
       );
     z-index: -1;
   }
@@ -698,6 +699,17 @@
   }
   @media (max-width: 720px) {
     .hero-photo { padding: 36px 24px; min-height: 540px; }
+    /* el encuadre estrecho deja mas espuma detras del texto */
+    .hero-photo .scrim {
+      background:
+        linear-gradient(
+          180deg,
+          oklch(20% 0.038 145 / 0.56) 0%,
+          oklch(20% 0.038 145 / 0.52) 26%,
+          oklch(16% 0.040 145 / 0.82) 62%,
+          oklch(16% 0.040 145 / 0.94) 100%
+        );
+    }
     .hero-photo .signature { display: none; }
   }
 
@@ -1528,7 +1540,7 @@
   <!-- ============= HERO ============= -->
   <div class="wrap">
     <section class="hero-photo" aria-labelledby="hero-h">
-      <div class="bg" role="img" aria-label="Mobile physical therapy session in a Maui home"></div>
+      <div class="bg" role="img" aria-label="Outrigger canoe crew racing through open ocean swell off Maui"></div>
       <div class="scrim" aria-hidden="true"></div>
 
       <span class="eyebrow-photo">
