@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://islandptmaui.com/sitemap.xml
+Sitemap: https://www.islandptmaui.com/sitemap.xml
