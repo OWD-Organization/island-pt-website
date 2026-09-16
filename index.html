@@ -890,6 +890,15 @@
     margin: 0 0 18px; max-width: 56ch;
   }
   .about-letter .body-p:last-of-type { margin-bottom: 32px; }
+  .about-letter .cred-chip {
+    display: inline-flex; align-items: center; gap: 10px;
+    text-decoration: none;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 600; color: var(--ink-60);
+  }
+  .about-letter .cred-chip img { display: block; width: 44px; height: 44px; }
+  .about-letter .cred-chip:hover { color: var(--ink-95); }
+  .about-letter .cred-chip:focus-visible { outline: 2px solid var(--ocean-70); outline-offset: 4px; }
   .about-letter .closing-row {
     display: flex; align-items: center; gap: 18px;
     flex-wrap: wrap;
@@ -1239,6 +1248,37 @@
     margin: 0 0 8px;
   }
   .footer-strip .contact-item b { color: var(--bone); font-weight: 600; }
+  /* Credential badge (Accredible / ABPTS OCS) */
+  .footer-strip .cred-strip {
+    display: flex; align-items: center; gap: 16px;
+    margin: 28px 0 4px;
+  }
+  .footer-strip .cred-badge {
+    display: block; flex: none; padding: 0; line-height: 0;
+    border-radius: 4px;
+  }
+  .footer-strip .cred-badge img {
+    display: block; width: 56px; height: 56px;
+  }
+  .footer-strip .cred-badge:focus-visible {
+    outline: 2px solid var(--sun-70); outline-offset: 4px;
+  }
+  .footer-strip .cred-text {
+    font-size: 13px; line-height: 1.6; max-width: 66ch;
+    color: oklch(94% 0.008 82 / 0.72);
+  }
+  .footer-strip .cred-text b {
+    display: block; color: var(--bone); font-weight: 600; font-size: 14px;
+  }
+  .footer-strip .cred-text a {
+    display: inline; padding: 0; color: var(--sun-70);
+    text-decoration: underline; text-underline-offset: 2px;
+  }
+  .footer-strip .cred-text a:hover { color: var(--bone); }
+  @media (max-width: 480px) {
+    .footer-strip .cred-strip { align-items: flex-start; }
+  }
+
   .footer-strip .legal {
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
     margin-top: 28px;
@@ -1569,6 +1609,10 @@
           <div class="closing-row">
             <a class="btn" data-variant="primary" href="contact.html#message">Schedule your free discovery call today <span class="arrow" aria-hidden="true">→</span></a>
             <span class="eyebrow" data-style="rule">Board Certified Clinical Specialist</span>
+            <a class="cred-chip" href="https://www.credential.net/b6594d97-3d1e-4cb2-a8fe-9042d0001795" target="_blank" rel="noopener noreferrer">
+              <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/188134442" alt="ABPTS Board-Certified Orthopaedic Clinical Specialist badge, issued by the American Physical Therapy Association" width="44" height="44" loading="lazy" decoding="async">
+              Verify OCS certification
+            </a>
           </div>
         </div>
       </article>
@@ -1973,6 +2017,17 @@
         <a href="why-cash-pay.html">Why Cash-Pay</a>
         <a href="contact.html">Contact</a>
       </div>
+    </div>
+
+    <div class="cred-strip">
+      <a class="cred-badge" href="https://www.credential.net/b6594d97-3d1e-4cb2-a8fe-9042d0001795" target="_blank" rel="noopener noreferrer">
+        <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/188134442" alt="ABPTS Board-Certified Orthopaedic Clinical Specialist badge, issued by the American Physical Therapy Association" width="56" height="56" loading="lazy" decoding="async">
+      </a>
+      <p class="cred-text">
+        <b>Teddy Zabel, DPT, OCS</b>
+        Board-Certified Orthopaedic Clinical Specialist &middot; American Physical Therapy Association &middot;
+        <a href="https://www.credential.net/b6594d97-3d1e-4cb2-a8fe-9042d0001795" target="_blank" rel="noopener noreferrer">Verify credential</a>
+      </p>
     </div>
 
     <div class="legal">

@@ -701,6 +701,27 @@
     font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2vw, 26px);
     line-height: 1.4; color: var(--ocean-70); max-width: 44ch;
   }
+  .founder .cred-verified {
+    display: flex; align-items: center; gap: 18px;
+    margin-top: 24px; padding-top: 22px; border-top: var(--line-hair);
+  }
+  .founder .cred-verified img {
+    display: block; flex: none; width: 88px; height: 88px;
+  }
+  .founder .cred-verified p.cred-copy {
+    font-family: var(--sans); font-style: normal;
+    font-size: 14px; line-height: 1.6; color: var(--ink-60);
+    margin: 0; max-width: 52ch;
+  }
+  .founder .cred-verified .cred-copy b {
+    display: block; color: var(--ink-95); font-weight: 600;
+  }
+  .founder .cred-verified a {
+    color: var(--ocean-70); text-decoration: underline; text-underline-offset: 2px;
+  }
+  @media (max-width: 560px) {
+    .founder .cred-verified { flex-direction: column; align-items: flex-start; gap: 14px; }
+  }
   .founder .credentials-list {
     display: flex; flex-wrap: wrap; gap: 16px 28px;
     padding-top: 22px; border-top: var(--line-hair);
@@ -1021,6 +1042,37 @@
     margin: 0 0 8px;
   }
   .footer-strip .contact-item b { color: var(--bone); font-weight: 600; }
+  /* Credential badge (Accredible / ABPTS OCS) */
+  .footer-strip .cred-strip {
+    display: flex; align-items: center; gap: 16px;
+    margin: 28px 0 4px;
+  }
+  .footer-strip .cred-badge {
+    display: block; flex: none; padding: 0; line-height: 0;
+    border-radius: 4px;
+  }
+  .footer-strip .cred-badge img {
+    display: block; width: 56px; height: 56px;
+  }
+  .footer-strip .cred-badge:focus-visible {
+    outline: 2px solid var(--sun-70); outline-offset: 4px;
+  }
+  .footer-strip .cred-text {
+    font-size: 13px; line-height: 1.6; max-width: 66ch;
+    color: oklch(94% 0.008 82 / 0.72);
+  }
+  .footer-strip .cred-text b {
+    display: block; color: var(--bone); font-weight: 600; font-size: 14px;
+  }
+  .footer-strip .cred-text a {
+    display: inline; padding: 0; color: var(--sun-70);
+    text-decoration: underline; text-underline-offset: 2px;
+  }
+  .footer-strip .cred-text a:hover { color: var(--bone); }
+  @media (max-width: 480px) {
+    .footer-strip .cred-strip { align-items: flex-start; }
+  }
+
   .footer-strip .legal {
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
     margin-top: 28px;
@@ -1246,6 +1298,17 @@
             <span><b>HI</b> Licensed in Hawaiʻi</span>
             <span><b>10+</b> Years of Practice</span>
           </div>
+
+          <div class="cred-verified">
+            <a href="https://www.credential.net/b6594d97-3d1e-4cb2-a8fe-9042d0001795" target="_blank" rel="noopener noreferrer">
+              <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/188134442" alt="ABPTS Board-Certified Orthopaedic Clinical Specialist badge, issued by the American Physical Therapy Association" width="88" height="88" loading="lazy" decoding="async">
+            </a>
+            <p class="cred-copy">
+              <b>Board certification, independently verified.</b>
+              Teddy&rsquo;s Orthopaedic Clinical Specialist certification is issued by the American Board of Physical Therapy Specialties.
+              <a href="https://www.credential.net/b6594d97-3d1e-4cb2-a8fe-9042d0001795" target="_blank" rel="noopener noreferrer">View the credential</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -1451,6 +1514,17 @@
         <a href="why-cash-pay.html">Why Cash-Pay</a>
         <a href="contact.html">Contact</a>
       </div>
+    </div>
+
+    <div class="cred-strip">
+      <a class="cred-badge" href="https://www.credential.net/b6594d97-3d1e-4cb2-a8fe-9042d0001795" target="_blank" rel="noopener noreferrer">
+        <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/188134442" alt="ABPTS Board-Certified Orthopaedic Clinical Specialist badge, issued by the American Physical Therapy Association" width="56" height="56" loading="lazy" decoding="async">
+      </a>
+      <p class="cred-text">
+        <b>Teddy Zabel, DPT, OCS</b>
+        Board-Certified Orthopaedic Clinical Specialist &middot; American Physical Therapy Association &middot;
+        <a href="https://www.credential.net/b6594d97-3d1e-4cb2-a8fe-9042d0001795" target="_blank" rel="noopener noreferrer">Verify credential</a>
+      </p>
     </div>
 
     <div class="legal">

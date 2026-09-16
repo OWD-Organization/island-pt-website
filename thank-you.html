@@ -244,6 +244,37 @@
   .footer-strip p { font-size: 14px; max-width: 38ch; opacity: 0.85; margin: 0; line-height: 1.6; }
   .footer-strip .contact-item { font-size: 14px; line-height: 1.6; color: oklch(94% 0.008 82 / 0.85); margin: 0 0 8px; }
   .footer-strip .contact-item b { color: var(--bone); font-weight: 600; }
+  /* Credential badge (Accredible / ABPTS OCS) */
+  .footer-strip .cred-strip {
+    display: flex; align-items: center; gap: 16px;
+    margin: 28px 0 4px;
+  }
+  .footer-strip .cred-badge {
+    display: block; flex: none; padding: 0; line-height: 0;
+    border-radius: 4px;
+  }
+  .footer-strip .cred-badge img {
+    display: block; width: 56px; height: 56px;
+  }
+  .footer-strip .cred-badge:focus-visible {
+    outline: 2px solid var(--sun-70); outline-offset: 4px;
+  }
+  .footer-strip .cred-text {
+    font-size: 13px; line-height: 1.6; max-width: 66ch;
+    color: oklch(94% 0.008 82 / 0.72);
+  }
+  .footer-strip .cred-text b {
+    display: block; color: var(--bone); font-weight: 600; font-size: 14px;
+  }
+  .footer-strip .cred-text a {
+    display: inline; padding: 0; color: var(--sun-70);
+    text-decoration: underline; text-underline-offset: 2px;
+  }
+  .footer-strip .cred-text a:hover { color: var(--bone); }
+  @media (max-width: 480px) {
+    .footer-strip .cred-strip { align-items: flex-start; }
+  }
+
   .footer-strip .legal { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 28px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: oklch(94% 0.008 82 / 0.6); }
   @media (max-width: 720px) { .footer-strip .word-row { grid-template-columns: 1fr; align-items: start; gap: 24px; } .footer-strip .word-cta { justify-self: start; } }
   @media (max-width: 860px) { .footer-strip .row { grid-template-columns: 1fr; gap: 32px; } }
@@ -436,6 +467,17 @@
         <a href="why-cash-pay.html">Why Cash-Pay</a>
         <a href="contact.html">Contact</a>
       </div>
+    </div>
+
+    <div class="cred-strip">
+      <a class="cred-badge" href="https://www.credential.net/b6594d97-3d1e-4cb2-a8fe-9042d0001795" target="_blank" rel="noopener noreferrer">
+        <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/188134442" alt="ABPTS Board-Certified Orthopaedic Clinical Specialist badge, issued by the American Physical Therapy Association" width="56" height="56" loading="lazy" decoding="async">
+      </a>
+      <p class="cred-text">
+        <b>Teddy Zabel, DPT, OCS</b>
+        Board-Certified Orthopaedic Clinical Specialist &middot; American Physical Therapy Association &middot;
+        <a href="https://www.credential.net/b6594d97-3d1e-4cb2-a8fe-9042d0001795" target="_blank" rel="noopener noreferrer">Verify credential</a>
+      </p>
     </div>
 
     <div class="legal">
