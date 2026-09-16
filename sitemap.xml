@@ -97,6 +97,24 @@
        clinic-news). If category archive pages are built too, they'd follow
        the same convention, e.g. blog-category-{slug}.html. Add each post
        and category page as its own <url> entry here once it exists. -->
+  <url>
+    <loc>https://islandptmaui.com/blog.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://islandptmaui.com/blog-low-back-pain.html</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://islandptmaui.com/blog-peptides-recovery.html</loc>
+    <lastmod>2026-05-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- ============= LEGAL ============= -->
   <url>
