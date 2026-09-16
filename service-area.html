@@ -285,18 +285,26 @@
   }
   .top-bar-row {
     max-width: none;
-    display: flex; align-items: center; justify-content: space-between;
+    /* 3 columnas: la de reseñas queda centrada en el header real,
+       el resto sigue alineado a la derecha */
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
     gap: 18px; padding: 12px 24px;
     font-family: var(--mono);
     font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
     color: oklch(94% 0.008 82 / 0.9);
   }
+  .top-bar-row > span:first-child { grid-column: 2; justify-self: center; text-align: center; }
+  .top-bar-row > span:last-child { grid-column: 3; justify-self: end; white-space: nowrap; }
   .top-bar-row .stars { color: var(--sun-70); letter-spacing: 0.12em; }
   .top-bar-row a { text-decoration: none; transition: color var(--dur-fast) var(--ease-out-q); }
   .top-bar-row a:hover { color: var(--sun-70); }
   .top-bar-row .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--sun-70); display: inline-block; margin: 0 14px; vertical-align: middle; }
   @media (max-width: 720px) {
     .top-bar-row .areas, .top-bar-row .dot { display: none; }
+    /* en movil no caben centrado + telefono a la derecha: se apilan centrados */
+    .top-bar-row { grid-template-columns: 1fr; gap: 6px; justify-items: center; }
+    .top-bar-row > span:first-child,
+    .top-bar-row > span:last-child { grid-column: 1; justify-self: center; }
   }
 
   /* NAV */
@@ -1305,6 +1313,7 @@
         <a href="about.html">Our Story</a>
         <a href="why-cash-pay.html">Why Cash-Pay</a>
         <a href="/blog">Blog</a>
+        <a href="testimonials.html">Reviews</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
