@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/blog.html", "destination": "/blog", "permanent": true },
+    { "source": "/blog-low-back-pain.html", "destination": "/blog/low-back-pain", "permanent": true },
+    { "source": "/blog-peptides-recovery.html", "destination": "/blog/peptides-recovery", "permanent": true }
+  ]
+}

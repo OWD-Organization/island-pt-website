@@ -91,26 +91,30 @@
   </url>
 
   <!-- ============= BLOG ============= -->
-  <!-- Same flat-file pattern: blog.html as the hub, each post its own
-       root-level page (e.g. blog-{slug}.html), each assigned to a category
-       (back-pain, mobility-balance, strength-wellness, running-sports,
-       clinic-news). If category archive pages are built too, they'd follow
-       the same convention, e.g. blog-category-{slug}.html. Add each post
-       and category page as its own <url> entry here once it exists. -->
+  <!-- Directory-based, unlike the flat-file pattern used above: the hub
+       lives at blog/index.html (served as /blog) and each post at
+       blog/{slug}/index.html (served as /blog/{slug}). Posts are assigned a
+       category (back-pain, mobility-balance, strength-wellness,
+       running-sports, clinic-news); category archives, if built, would
+       follow as blog/category/{slug}/index.html. Blog pages link with
+       root-relative paths (/about.html, /img/...) because they sit in
+       subdirectories. Add each post as its own <url> entry here.
+       Old flat URLs (/blog.html, /blog-{slug}.html) 301 to the new ones
+       via vercel.json. -->
   <url>
-    <loc>https://islandptmaui.com/blog.html</loc>
+    <loc>https://islandptmaui.com/blog</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://islandptmaui.com/blog-low-back-pain.html</loc>
+    <loc>https://islandptmaui.com/blog/low-back-pain</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://islandptmaui.com/blog-peptides-recovery.html</loc>
+    <loc>https://islandptmaui.com/blog/peptides-recovery</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
