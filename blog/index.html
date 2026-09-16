@@ -574,7 +574,9 @@
     display: block; border-radius: var(--r-soft); overflow: hidden;
     background: var(--paper-15);
   }
-  .post-row .shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .post-row .shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+  /* Images whose own framing must not be cropped (e.g. captioned art) */
+  .post-row .shot[data-fit="full"] img { aspect-ratio: 3 / 2; object-fit: contain; }
   .post-row h3 {
     font-family: var(--serif); font-weight: 400;
     font-size: clamp(24px, 2.4vw, 32px);
@@ -1000,8 +1002,8 @@
       </article>
 
       <article class="post-row">
-        <a class="shot" href="/blog/peptides-recovery" aria-label="Read: Peptides — miracle recovery tool or just another health trend?">
-          <img src="/img/runner-mid-stride-road.jpg" alt="Runner mid-stride on an open road while returning to training" loading="lazy">
+        <a class="shot" data-fit="full" href="/blog/peptides-recovery" aria-label="Read: Peptides — miracle recovery tool or just another health trend?">
+          <img src="/img/peptide-meme.webp" alt="Meme captioned &ldquo;Peptides!?!? We talkin&rsquo; &rsquo;bout peptides?!?!&rdquo;" width="760" height="510" loading="lazy">
         </a>
         <div class="copy">
           <p class="post-meta">
