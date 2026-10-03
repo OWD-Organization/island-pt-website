@@ -964,6 +964,7 @@
     }
   }
 </style>
+<script>document.documentElement.classList.add('js')</script>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script src="/assets/analytics.js" defer></script>
@@ -987,21 +988,23 @@
   .nav .nav-link:focus-visible { outline: 3px solid var(--coral-55); outline-offset: 3px; }
   .nav .nav-link .caret { font-size: 10px; line-height: 1; transition: transform var(--dur-fast) var(--ease-out-q); }
 
-  /* JS-driven dropdown state (CSS hover/focus-within stays as the no-JS fallback). */
-  .nav .has-submenu[data-js] .submenu {
+  /* JS-driven dropdown state; html.js is set inline in <head> before first render, so no restyle on load.
+     Without JS the original CSS hover/focus-within behavior still works. */
+  .js .nav .has-submenu .submenu {
     opacity: 0; pointer-events: none; visibility: hidden; transform: translateY(-4px);
     transition: opacity 140ms var(--ease-out-q), transform 140ms var(--ease-out-q), visibility 0s linear 140ms;
   }
-  .nav .has-submenu[data-js][data-open="true"] .submenu {
+  .js .nav .has-submenu[data-open="true"] .submenu {
     opacity: 1; pointer-events: auto; visibility: visible; transform: translateY(0);
     transition: opacity 140ms var(--ease-out-q), transform 140ms var(--ease-out-q), visibility 0s;
   }
-  .nav .has-submenu[data-js]:focus-within .submenu-trigger { border-bottom-color: transparent; }
-  .nav .has-submenu[data-js] .submenu-trigger:hover,
-  .nav .has-submenu[data-js][data-open="true"] .submenu-trigger,
-  .nav .has-submenu[data-js] .submenu-trigger[data-current="true"] { border-bottom-color: var(--ocean-70); }
-  .nav .has-submenu[data-js] .submenu-trigger .caret { transform: none; }
-  .nav .has-submenu[data-js][data-open="true"] .submenu-trigger .caret { transform: rotate(180deg); }
+  .js .nav .has-submenu:focus-within .submenu-trigger,
+  .js .nav .has-submenu:hover .submenu-trigger { border-bottom-color: transparent; }
+  .js .nav .has-submenu .submenu-trigger:hover,
+  .js .nav .has-submenu[data-open="true"] .submenu-trigger,
+  .js .nav .has-submenu .submenu-trigger[data-current="true"] { border-bottom-color: var(--ocean-70); }
+  .js .nav .has-submenu .submenu-trigger .caret { transform: none; }
+  .js .nav .has-submenu[data-open="true"] .submenu-trigger .caret { transform: rotate(180deg); }
   .nav .submenu a[aria-current="page"] { background: var(--paper-10); color: var(--ocean-70); }
 
   /* Header actions: Call, Text us, Book */
@@ -1029,7 +1032,7 @@
   .nav-drawer .drawer-toggle:focus-visible { outline: 2px solid var(--coral-55); outline-offset: 2px; }
   .nav-drawer .drawer-sub { list-style: none; }
   .nav-drawer .drawer-sub a { display: block; }
-  .nav-drawer .drawer-sub[hidden] { display: none; }
+  .js .nav-drawer .drawer-toggle[aria-expanded="false"] + .drawer-sub { display: none; }
 
   /* Sticky mobile bar: Call / Text us / Book */
   .call-bar .call-bar-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }

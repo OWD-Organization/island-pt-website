@@ -11,14 +11,12 @@
     if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
   function closeAll(except) {
-    items.forEach(function (li) { if (li !== except) setOpen(li, false); });
+    items.forEach(function (li) { if (li !== except && li.getAttribute('data-open') === 'true') setOpen(li, false); });
   }
 
   items.forEach(function (li) {
     var btn = li.querySelector('.submenu-trigger');
     if (!btn || !li.querySelector('.submenu')) return;
-    li.setAttribute('data-js', 'true');
-    setOpen(li, false);
 
     li.addEventListener('pointerdown', function (e) { lastPointer = e.pointerType || ''; });
     // Desktop hover (mouse only, so a tap does not open and then immediately close).
@@ -58,7 +56,7 @@
   });
 
   document.addEventListener('click', function (e) {
-    items.forEach(function (li) { if (!li.contains(e.target)) setOpen(li, false); });
+    items.forEach(function (li) { if (!li.contains(e.target) && li.getAttribute('data-open') === 'true') setOpen(li, false); });
   });
 
   // Mobile drawer: start it just below the sticky header (whose height varies with the top bar),
@@ -74,15 +72,12 @@
   if (toggle) toggle.addEventListener('click', placeDrawer);
   window.addEventListener('resize', function () { if (drawer && drawer.dataset.open === 'true') placeDrawer(); });
 
-  // Mobile drawer groups: buttons with aria-expanded controlling a sub-list.
+  // Mobile drawer groups: buttons with aria-expanded; CSS hides the sub-list while collapsed.
+  // No DOM writes at load (avoids a full-page restyle after first paint).
   Array.prototype.forEach.call(document.querySelectorAll('.nav-drawer .drawer-toggle'), function (b) {
-    var sub = document.getElementById(b.getAttribute('aria-controls'));
-    if (!sub) return;
-    sub.hidden = b.getAttribute('aria-expanded') !== 'true';
     b.addEventListener('click', function () {
       var open = b.getAttribute('aria-expanded') === 'true';
       b.setAttribute('aria-expanded', open ? 'false' : 'true');
-      sub.hidden = open;
     });
   });
 })();
