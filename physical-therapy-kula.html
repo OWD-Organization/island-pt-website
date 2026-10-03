@@ -1117,6 +1117,92 @@
   }
 
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script src="/assets/analytics.js" defer></script>
+<script src="/assets/site.js" defer></script>
+<style id="owd-quick-wins">
+  /* Quick wins Oct 2026: shared nav item class, dropdown states, text/booking CTAs. */
+  .nav .nav-link {
+    appearance: none; -webkit-appearance: none;
+    background: transparent; border: 0; border-bottom: 1.5px solid transparent; border-radius: 0;
+    margin: 0; padding: 6px 2px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--sans); font-size: 15px; font-weight: 400; font-style: normal;
+    line-height: 1.55; letter-spacing: normal; text-transform: none; text-decoration: none;
+    color: var(--ink-95); vertical-align: middle; white-space: nowrap;
+    transition: border-color var(--dur-fast) var(--ease-out-q);
+  }
+  .nav .nav-link:hover,
+  .nav .nav-link[aria-current="page"],
+  .nav .nav-link[data-current="true"],
+  .nav .nav-link[aria-expanded="true"] { border-bottom-color: var(--ocean-70); }
+  .nav .nav-link:focus-visible { outline: 3px solid var(--coral-55); outline-offset: 3px; }
+  .nav .nav-link .caret { font-size: 10px; line-height: 1; transition: transform var(--dur-fast) var(--ease-out-q); }
+
+  /* JS-driven dropdown state (CSS hover/focus-within stays as the no-JS fallback). */
+  .nav .has-submenu[data-js] .submenu {
+    opacity: 0; pointer-events: none; visibility: hidden; transform: translateY(-4px);
+    transition: opacity 140ms var(--ease-out-q), transform 140ms var(--ease-out-q), visibility 0s linear 140ms;
+  }
+  .nav .has-submenu[data-js][data-open="true"] .submenu {
+    opacity: 1; pointer-events: auto; visibility: visible; transform: translateY(0);
+    transition: opacity 140ms var(--ease-out-q), transform 140ms var(--ease-out-q), visibility 0s;
+  }
+  .nav .has-submenu[data-js]:focus-within .submenu-trigger { border-bottom-color: transparent; }
+  .nav .has-submenu[data-js] .submenu-trigger:hover,
+  .nav .has-submenu[data-js][data-open="true"] .submenu-trigger,
+  .nav .has-submenu[data-js] .submenu-trigger[data-current="true"] { border-bottom-color: var(--ocean-70); }
+  .nav .has-submenu[data-js] .submenu-trigger .caret { transform: none; }
+  .nav .has-submenu[data-js][data-open="true"] .submenu-trigger .caret { transform: rotate(180deg); }
+  .nav .submenu a[aria-current="page"] { background: var(--paper-10); color: var(--ocean-70); }
+
+  /* Header actions: Call, Text us, Book */
+  .nav-actions .nav-call { white-space: nowrap; }
+  .nav-actions .nav-cta { white-space: nowrap; }
+  @media (max-width: 1320px) {
+    .nav ul { gap: 22px; }
+    .nav-actions { gap: 8px; }
+    .nav-call, .nav-cta { padding: 12px 14px; }
+  }
+
+  /* Mobile drawer disclosure buttons (same look as the old <summary>) */
+  .nav-drawer .drawer-toggle {
+    appearance: none; -webkit-appearance: none; background: transparent; border: 0; margin: 0;
+    width: 100%; cursor: pointer; text-align: left;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 4px;
+    font-family: var(--serif); font-size: 28px; font-weight: 400; line-height: 1;
+    letter-spacing: -0.018em; color: var(--ink-95);
+  }
+  .nav-drawer .drawer-toggle::after {
+    content: "+"; font-family: var(--mono); font-size: 22px; color: var(--ocean-70);
+  }
+  .nav-drawer .drawer-toggle[aria-expanded="true"]::after { content: "\2013"; }
+  .nav-drawer .drawer-toggle:focus-visible { outline: 2px solid var(--coral-55); outline-offset: 2px; }
+  .nav-drawer .drawer-sub { list-style: none; }
+  .nav-drawer .drawer-sub a { display: block; }
+  .nav-drawer .drawer-sub[hidden] { display: none; }
+
+  /* Sticky mobile bar: Call / Text us / Book */
+  .call-bar .call-bar-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .call-bar .call-bar-row a { padding: 12px 6px; gap: 6px; font-size: 15px; white-space: nowrap; }
+  .call-bar .call-bar-row a .icon { font-size: 17px; font-style: normal; }
+  .call-bar .call-bar-row a[data-variant="book"] { background: var(--ocean-70); color: var(--bone); box-shadow: inset 0 0 0 1.5px var(--bone); }
+
+  /* Footer CTA pair */
+  .footer-strip .word-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-self: end; }
+  @media (max-width: 720px) { .footer-strip .word-ctas { justify-self: start; } }
+  /* Phones: header quick icons go icon-only (aria-labels kept) so they never overlap the centered logo. */
+  @media (max-width: 460px) {
+    .nav-mobile-icons a { width: 40px; padding: 0; justify-content: center; }
+    .nav-mobile-icons a .label { display: none; }
+    .nav-mobile-icons a .icon { font-size: 16px; }
+  }
+  @media (max-width: 360px) {
+    .nav-mobile-icons a { width: 36px; }
+  }
+</style>
 </head>
 <body>
 
@@ -1138,40 +1224,47 @@
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a class="brand" href="/" aria-label="Island PT — home">
-      <img src="img/IslandPT_Logo.png" alt="Island PT">
+      <img src="/img/IslandPT_Logo.png" alt="Island PT">
     </a>
-    <ul role="list">
-      <li><a href="/">Home</a></li>
-      <li><a href="about.html">About</a></li>
+    <ul role="list" class="nav-list">
+      <li><a class="nav-link" href="/">Home</a></li>
       <li class="has-submenu">
-        <button type="button" class="submenu-trigger" aria-expanded="false" aria-controls="sub-services">Services <span class="caret" aria-hidden="true">▾</span></button>
+        <button type="button" class="nav-link submenu-trigger" aria-expanded="false" aria-controls="sub-about">About Us <span class="caret" aria-hidden="true">▾</span></button>
+        <ul id="sub-about" class="submenu" role="list">
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/why-cash-pay.html">Why Cash-Pay</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <button type="button" class="nav-link submenu-trigger" aria-expanded="false" aria-controls="sub-services">Services <span class="caret" aria-hidden="true">▾</span></button>
         <ul id="sub-services" class="submenu" role="list">
-          <li><a href="services.html">Services Overview</a></li>
-          <li><a href="mobile-physical-therapy.html">Mobile Physical Therapy</a></li>
+          <li><a href="/services.html">Services Overview</a></li>
+          <li><a href="/mobile-physical-therapy.html">Mobile Physical Therapy</a></li>
         </ul>
       </li>
       <li class="has-submenu">
-        <button type="button" class="submenu-trigger" aria-expanded="false" aria-controls="sub-areas">Service Area <span class="caret" aria-hidden="true">▾</span></button>
+        <button type="button" class="nav-link submenu-trigger" aria-expanded="false" aria-controls="sub-areas" data-current="true">Service Area <span class="caret" aria-hidden="true">▾</span></button>
         <ul id="sub-areas" class="submenu" role="list">
-          <li><a href="service-area.html">Service Area Overview</a></li>
-          <li><a href="physical-therapy-kihei.html">Kīhei</a></li>
-          <li><a href="physical-therapy-wailea.html">Wailea</a></li>
-          <li><a href="physical-therapy-kula.html" aria-current="page">Kula</a></li>
-          <li><a href="physical-therapy-makawao.html">Makawao</a></li>
+          <li><a href="/service-area.html">Service Area Overview</a></li>
+          <li><a href="/physical-therapy-kihei.html">Kīhei</a></li>
+          <li><a href="/physical-therapy-wailea.html">Wailea</a></li>
+          <li><a href="/physical-therapy-kula.html" aria-current="page">Kula</a></li>
+          <li><a href="/physical-therapy-makawao.html">Makawao</a></li>
         </ul>
       </li>
-      <li><a href="why-cash-pay.html">Why Cash-Pay</a></li>
-      <li><a href="testimonials.html">Reviews</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a class="nav-link" href="/testimonials.html">Reviews</a></li>
+      <li><a class="nav-link" href="/contact.html">Contact</a></li>
     </ul>
     <div class="nav-actions">
-  <a class="nav-call" href="tel:8082016922">📞 Call</a>
-  <a class="nav-cta" href="https://islandptmaui.janeapp.com" target="_blank" rel="noopener noreferrer">🗓️ Schedule</a>
+      <a class="nav-call" href="tel:8082016922">📞 Call</a>
+      <a class="nav-call" href="sms:+18082016922">💬 Text us</a>
+      <a class="nav-cta" href="/booking" target="_blank" rel="noopener noreferrer">🗓️ Book a free discovery call</a>
     </div>
     <div class="nav-mobile-icons">
       <a href="tel:8082016922" aria-label="Call Island PT"><span class="icon" aria-hidden="true">📞</span><span class="label">Call</span></a>
-      <a href="https://islandptmaui.janeapp.com" target="_blank" rel="noopener noreferrer" aria-label="Schedule an appointment (opens Jane booking)"><span class="icon" aria-hidden="true">🗓️</span><span class="label">Schedule</span></a>
+      <a href="sms:+18082016922" aria-label="Text Island PT"><span class="icon" aria-hidden="true">💬</span><span class="label">Text</span></a>
+      <a href="/booking" target="_blank" rel="noopener noreferrer" aria-label="Book a free discovery call (opens Jane booking)"><span class="icon" aria-hidden="true">🗓️</span><span class="label">Book</span></a>
     </div>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-drawer" aria-expanded="false">
       <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -1183,35 +1276,37 @@
 <aside class="nav-drawer" id="nav-drawer" data-open="false" aria-hidden="true">
   <ul role="list">
     <li><a href="/">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li>
-      <details class="drawer-group">
-        <summary>Services</summary>
-        <ul role="list" class="drawer-sub">
-          <li><a href="services.html">Services Overview</a></li>
-          <li><a href="mobile-physical-therapy.html">Mobile Physical Therapy</a></li>
-        </ul>
-      </details>
+    <li class="drawer-group">
+      <button type="button" class="drawer-toggle" aria-expanded="false" aria-controls="drawer-about">About Us</button>
+      <ul id="drawer-about" class="drawer-sub" role="list">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/why-cash-pay.html">Why Cash-Pay</a></li>
+      </ul>
     </li>
-    <li>
-      <details class="drawer-group" open>
-        <summary>Service Area</summary>
-        <ul role="list" class="drawer-sub">
-          <li><a href="service-area.html">Service Area Overview</a></li>
-          <li><a href="physical-therapy-kihei.html">Kīhei</a></li>
-          <li><a href="physical-therapy-wailea.html">Wailea</a></li>
-          <li><a href="physical-therapy-kula.html" aria-current="page">Kula</a></li>
-          <li><a href="physical-therapy-makawao.html">Makawao</a></li>
-        </ul>
-      </details>
+    <li class="drawer-group">
+      <button type="button" class="drawer-toggle" aria-expanded="false" aria-controls="drawer-services">Services</button>
+      <ul id="drawer-services" class="drawer-sub" role="list">
+        <li><a href="/services.html">Services Overview</a></li>
+        <li><a href="/mobile-physical-therapy.html">Mobile Physical Therapy</a></li>
+      </ul>
     </li>
-    <li><a href="why-cash-pay.html">Why Cash-Pay</a></li>
-    <li><a href="testimonials.html">Reviews</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li class="drawer-group">
+      <button type="button" class="drawer-toggle" aria-expanded="false" aria-controls="drawer-areas">Service Area</button>
+      <ul id="drawer-areas" class="drawer-sub" role="list">
+        <li><a href="/service-area.html">Service Area Overview</a></li>
+        <li><a href="/physical-therapy-kihei.html">Kīhei</a></li>
+        <li><a href="/physical-therapy-wailea.html">Wailea</a></li>
+        <li><a href="/physical-therapy-kula.html" aria-current="page">Kula</a></li>
+        <li><a href="/physical-therapy-makawao.html">Makawao</a></li>
+      </ul>
+    </li>
+    <li><a href="/testimonials.html">Reviews</a></li>
+    <li><a href="/contact.html">Contact</a></li>
   </ul>
   <div class="drawer-cta-row">
-    <a class="btn" data-variant="primary" href="https://islandptmaui.janeapp.com" target="_blank" rel="noopener noreferrer">Schedule <span class="arrow" aria-hidden="true">→</span></a>
+    <a class="btn" data-variant="primary" href="/booking" target="_blank" rel="noopener noreferrer">Book a free discovery call <span class="arrow" aria-hidden="true">→</span></a>
+    <a class="btn" data-variant="outline" href="sms:+18082016922">Text us <span class="arrow" aria-hidden="true">→</span></a>
     <a class="btn" data-variant="outline" href="tel:8082016922">Call to book <span class="arrow" aria-hidden="true">→</span></a>
   </div>
   <p class="drawer-meta">
@@ -1236,8 +1331,9 @@
           <p class="lead">In-home care that comes up the mountain to you, for Upcountry residents who want to keep hiking the slopes of Haleakalā, keep working their land, and keep doing the everyday things without pain getting in the way.</p>
         </header>
         <div class="actions">
-          <a class="btn" data-variant="primary-bone" href="https://islandptmaui.janeapp.com" target="_blank" rel="noopener noreferrer">Request a Free Discovery Call <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn" data-variant="primary-bone" href="/booking" target="_blank" rel="noopener noreferrer">Book a free discovery call <span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn" data-variant="outline-bone" href="tel:8082016922">Call (808) 201-6922 <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn" data-variant="outline-bone" href="sms:+18082016922">Text us <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -1300,7 +1396,7 @@
       </div>
 
       <div style="margin-top: var(--gap-l);">
-        <a class="btn" data-variant="primary" href="https://islandptmaui.janeapp.com" target="_blank" rel="noopener noreferrer">Schedule a Kula Visit <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" data-variant="primary" href="/booking" target="_blank" rel="noopener noreferrer">Book a free discovery call <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -1434,7 +1530,7 @@
           <p>If you live in Kula or anywhere Upcountry, we would love to meet you. Reach out for a discovery call, tell us what you are dealing with, and we will build a plan that fits your life on the mountain.</p>
         </div>
         <div class="actions">
-          <a class="btn" data-variant="primary-bone" href="https://islandptmaui.janeapp.com" target="_blank" rel="noopener noreferrer">Request a Free Discovery Call <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn" data-variant="primary-bone" href="/booking" target="_blank" rel="noopener noreferrer">Book a free discovery call <span class="arrow" aria-hidden="true">→</span></a>
           <span class="meta">Mon &ndash; Fri &middot; 8 AM to 6 PM</span>
         </div>
       </div>
@@ -1448,7 +1544,10 @@
   <div class="wrap">
     <div class="word-row">
       <h2 class="word">Island <i>PT.</i></h2>
-      <a class="word-cta" href="tel:8082016922">Call to book <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      <div class="word-ctas">
+        <a class="word-cta" href="sms:+18082016922">Text us <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="word-cta" href="tel:8082016922">Call to book <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
     </div>
 
     <div class="row">
@@ -1470,7 +1569,7 @@
 
       <div>
         <h5>Helpful Links</h5>
-        <a href="https://islandptmaui.janeapp.com" target="_blank" rel="noopener noreferrer">Schedule</a>
+        <a href="/booking" target="_blank" rel="noopener noreferrer">Book a free discovery call</a>
         <a href="services.html">Our Services</a>
         <a href="about.html">Our Story</a>
         <a href="why-cash-pay.html">Why Cash-Pay</a>
@@ -1502,12 +1601,13 @@
   </div>
 </footer>
 
-<div class="call-bar" aria-label="Quick call">
-  <a href="tel:8082016922">
-    <span class="icon" aria-hidden="true">☎</span>
-    Call to book a session
-  </a>
-  <span class="sub">(808) 201-6922 · Mon – Fri</span>
+<div class="call-bar" aria-label="Quick contact">
+  <div class="call-bar-row">
+    <a href="tel:8082016922"><span class="icon" aria-hidden="true">☎</span>Call</a>
+    <a href="sms:+18082016922"><span class="icon" aria-hidden="true">💬</span>Text us</a>
+    <a href="/booking" target="_blank" rel="noopener noreferrer" data-variant="book" aria-label="Book a free discovery call (opens Jane booking)">Book</a>
+  </div>
+  <span class="sub">(808) 201-6922 · Mon–Fri</span>
 </div>
 
 <script>

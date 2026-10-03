@@ -4,7 +4,13 @@
     { "source": "/blog.html", "destination": "/blog", "permanent": true },
     { "source": "/blog-low-back-pain.html", "destination": "/blog/low-back-pain", "permanent": true },
     { "source": "/blog-peptides-recovery.html", "destination": "/blog/peptides-recovery", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/booking", "destination": "https://islandptmaui.janeapp.com/#/staff_member/1/treatment/1", "permanent": false },
+    { "source": "/schedule.html", "destination": "/booking", "permanent": true },
+    { "source": "/schedule", "destination": "/booking", "permanent": true },
+    { "source": "/img/runeasi-assessment-review.jpg", "destination": "/img/runeasi-assessment-review.webp", "permanent": true },
+    { "source": "/img/runeasi-treadmill-gait-analysis.jpg", "destination": "/img/runeasi-treadmill-gait-analysis.webp", "permanent": true },
+    { "source": "/img/runeasi-biomechanics-sensor-fitting.jpg", "destination": "/img/runeasi-biomechanics-sensor-fitting.webp", "permanent": true }
   ],
   "trailingSlash": false
 }
