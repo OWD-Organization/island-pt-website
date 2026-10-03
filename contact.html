@@ -675,7 +675,10 @@
     font-family: var(--serif); font-weight: 400;
     font-size: clamp(22px, 2vw, 28px); line-height: 1.25;
     color: var(--ink-95); margin: 0; max-width: 18ch;
-    overflow-wrap: anywhere;
+  }
+  @media (min-width: 861px) {
+    .reach-item { padding: 36px 24px; }
+    .reach-item .value { font-size: clamp(20px, 1.7vw, 24px); max-width: none; }
   }
   .reach-item .value a {
     text-decoration: none;
@@ -1203,7 +1206,7 @@
         </div>
         <div class="reach-item">
           <span class="label">Email</span>
-          <p class="value"><a href="mailto:Teddy@islandPTmaui.com">Teddy@islandPTmaui.com</a></p>
+          <p class="value"><a href="mailto:Teddy@islandPTmaui.com">Teddy@<wbr>islandPTmaui.com</a></p>
         </div>
         <div class="reach-item">
           <span class="label">Hours</span>
