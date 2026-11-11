@@ -12,5 +12,13 @@
     { "source": "/img/runeasi-treadmill-gait-analysis.jpg", "destination": "/img/runeasi-treadmill-gait-analysis.webp", "permanent": true },
     { "source": "/img/runeasi-biomechanics-sensor-fitting.jpg", "destination": "/img/runeasi-biomechanics-sensor-fitting.webp", "permanent": true }
   ],
-  "trailingSlash": false
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ]
 }
