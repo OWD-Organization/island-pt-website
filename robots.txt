@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://www.islandptmaui.com/sitemap.xml
+# Design variation preview. Do not index.
+# sitemap.xml is retained for the production URL list and is not an invitation to crawl this preview.
