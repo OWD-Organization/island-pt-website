@@ -67,7 +67,7 @@
        likely next ones to add in this same pattern. -->
   <url>
     <loc>https://www.islandptmaui.com/physical-therapy-kihei.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -115,13 +115,19 @@
        via vercel.json. -->
   <url>
     <loc>https://www.islandptmaui.com/blog</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.islandptmaui.com/blog/low-back-pain</loc>
     <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.islandptmaui.com/blog/paddling-shoulder-pain</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
